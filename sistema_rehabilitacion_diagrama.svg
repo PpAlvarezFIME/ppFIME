@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for professional look -->
+    <linearGradient id="sensorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="processingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7ED321;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5BA818;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="outputGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5A623;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D68910;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Arrow marker for data flow -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#F8F9FA"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" 
+        font-size="24" font-weight="bold" fill="#2C3E50">
+    Sistema de Control Inteligente para Rehabilitación
+  </text>
+  
+  <!-- MISO Label -->
+  <text x="600" y="65" text-anchor="middle" font-family="Arial, sans-serif" 
+        font-size="14" fill="#7F8C8D">
+    Paradigma MISO (Múltiples Entradas, Una Sola Salida)
+  </text>
+  
+  <!-- SENSOR BLOCKS (LEFT SIDE) -->
+  
+  <!-- Heart Rate Sensor -->
+  <g transform="translate(50, 120)">
+    <rect width="180" height="80" rx="10" fill="url(#sensorGradient)" stroke="#2C3E50" stroke-width="2"/>
+    <!-- Heart icon -->
+    <path d="M90 35 C85 25, 75 25, 75 35 C75 25, 65 25, 60 35 C60 45, 75 60, 90 65 C105 60, 120 45, 120 35 C115 25, 105 25, 105 35 C105 25, 95 25, 90 35 Z" 
+          fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <text x="90" y="75" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="12" font-weight="bold" fill="white">Sensor de Pulso</text>
+    <text x="90" y="88" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="12" font-weight="bold" fill="white">Cardíaco</text>
+  </g>
+  
+  <!-- Temperature Sensor -->
+  <g transform="translate(50, 250)">
+    <rect width="180" height="80" rx="10" fill="url(#sensorGradient)" stroke="#2C3E50" stroke-width="2"/>
+    <!-- Thermometer icon -->
+    <g transform="translate(85, 25)">
+      <rect x="8" y="5" width="4" height="25" fill="#E74C3C" rx="2"/>
+      <circle cx="10" cy="35" r="6" fill="#E74C3C"/>
+      <rect x="16" y="8" width="8" height="2" fill="#34495E"/>
+      <rect x="16" y="12" width="6" height="2" fill="#34495E"/>
+      <rect x="16" y="16" width="8" height="2" fill="#34495E"/>
+      <rect x="16" y="20" width="6" height="2" fill="#34495E"/>
+    </g>
+    <text x="90" y="68" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="12" font-weight="bold" fill="white">Sensor de</text>
+    <text x="90" y="81" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="12" font-weight="bold" fill="white">Temperatura</text>
+  </g>
+  
+  <!-- IMU Sensor -->
+  <g transform="translate(50, 380)">
+    <rect width="180" height="80" rx="10" fill="url(#sensorGradient)" stroke="#2C3E50" stroke-width="2"/>
+    <!-- Gyroscope/motion icon -->
+    <g transform="translate(80, 25)">
+      <circle cx="10" cy="15" r="12" fill="none" stroke="#9B59B6" stroke-width="3"/>
+      <circle cx="10" cy="15" r="6" fill="none" stroke="#8E44AD" stroke-width="2"/>
+      <path d="M10 3 L10 9 M10 21 L10 27 M22 15 L16 15 M4 15 L-2 15" 
+            stroke="#8E44AD" stroke-width="2" stroke-linecap="round"/>
+      <path d="M17 8 L14 11 M6 19 L3 22 M17 22 L14 19 M6 11 L3 8" 
+            stroke="#9B59B6" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <text x="90" y="68" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="12" font-weight="bold" fill="white">Sensor de Movimiento</text>
+    <text x="90" y="81" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="12" font-weight="bold" fill="white">(IMU)</text>
+  </g>
+  
+  <!-- DATA BUSES (connecting lines) -->
+  <!-- Heart rate sensor to CPU -->
+  <line x1="230" y1="160" x2="420" y2="280" stroke="#2980B9" stroke-width="4" marker-end="url(#arrowhead)"/>
+  <text x="300" y="210" font-family="Arial, sans-serif" font-size="10" fill="#2980B9">Bus de Datos</text>
+  
+  <!-- Temperature sensor to CPU -->
+  <line x1="230" y1="290" x2="420" y2="300" stroke="#2980B9" stroke-width="4" marker-end="url(#arrowhead)"/>
+  <text x="300" y="285" font-family="Arial, sans-serif" font-size="10" fill="#2980B9">Bus de Datos</text>
+  
+  <!-- IMU sensor to CPU -->
+  <line x1="230" y1="420" x2="420" y2="320" stroke="#2980B9" stroke-width="4" marker-end="url(#arrowhead)"/>
+  <text x="300" y="380" font-family="Arial, sans-serif" font-size="10" fill="#2980B9">Bus de Datos</text>
+  
+  <!-- CENTRAL PROCESSING UNIT -->
+  <g transform="translate(420, 230)">
+    <rect width="220" height="120" rx="15" fill="url(#processingGradient)" stroke="#2C3E50" stroke-width="3"/>
+    <!-- Microchip icon -->
+    <g transform="translate(100, 20)">
+      <rect x="5" y="5" width="30" height="30" fill="#34495E" rx="3"/>
+      <rect x="8" y="8" width="24" height="24" fill="#2C3E50" rx="2"/>
+      <!-- Pins -->
+      <rect x="0" y="10" width="5" height="3" fill="#BDC3C7"/>
+      <rect x="0" y="16" width="5" height="3" fill="#BDC3C7"/>
+      <rect x="0" y="22" width="5" height="3" fill="#BDC3C7"/>
+      <rect x="35" y="10" width="5" height="3" fill="#BDC3C7"/>
+      <rect x="35" y="16" width="5" height="3" fill="#BDC3C7"/>
+      <rect x="35" y="22" width="5" height="3" fill="#BDC3C7"/>
+      <rect x="13" y="0" width="3" height="5" fill="#BDC3C7"/>
+      <rect x="19" y="0" width="3" height="5" fill="#BDC3C7"/>
+      <rect x="25" y="0" width="3" height="5" fill="#BDC3C7"/>
+      <rect x="13" y="35" width="3" height="5" fill="#BDC3C7"/>
+      <rect x="19" y="35" width="3" height="5" fill="#BDC3C7"/>
+      <rect x="25" y="35" width="3" height="5" fill="#BDC3C7"/>
+      <!-- Circuit pattern -->
+      <circle cx="15" cy="15" r="2" fill="#27AE60"/>
+      <circle cx="25" cy="15" r="2" fill="#27AE60"/>
+      <circle cx="20" cy="25" r="2" fill="#27AE60"/>
+      <line x1="15" y1="15" x2="25" y2="15" stroke="#27AE60" stroke-width="1"/>
+      <line x1="20" y1="15" x2="20" y2="25" stroke="#27AE60" stroke-width="1"/>
+    </g>
+    <text x="110" y="75" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="14" font-weight="bold" fill="white">Unidad Central de</text>
+    <text x="110" y="92" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="14" font-weight="bold" fill="white">Procesamiento</text>
+    <text x="110" y="108" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="11" fill="white">Microcontrolador ATmega328P (Arduino)</text>
+  </g>
+  
+  <!-- OUTPUT SECTION -->
+  
+  <!-- Data bus from CPU to Motor Controller -->
+  <line x1="640" y1="290" x2="760" y2="290" stroke="#E67E22" stroke-width="4" marker-end="url(#arrowhead)"/>
+  <text x="680" y="280" font-family="Arial, sans-serif" font-size="10" fill="#E67E22">Control PWM</text>
+  
+  <!-- Motor Controller (H-Bridge) -->
+  <g transform="translate(760, 250)">
+    <rect width="160" height="80" rx="10" fill="url(#outputGradient)" stroke="#2C3E50" stroke-width="2"/>
+    <!-- H-Bridge circuit icon -->
+    <g transform="translate(70, 25)">
+      <rect x="5" y="5" width="20" height="20" fill="none" stroke="#34495E" stroke-width="2" rx="2"/>
+      <!-- H-bridge switches -->
+      <rect x="8" y="2" width="3" height="6" fill="#E74C3C"/>
+      <rect x="19" y="2" width="3" height="6" fill="#E74C3C"/>
+      <rect x="8" y="22" width="3" height="6" fill="#E74C3C"/>
+      <rect x="19" y="22" width="3" height="6" fill="#E74C3C"/>
+      <!-- Center connection -->
+      <line x1="9" y1="8" x2="21" y2="8" stroke="#34495E" stroke-width="2"/>
+      <line x1="9" y1="22" x2="21" y2="22" stroke="#34495E" stroke-width="2"/>
+      <line x1="15" y1="8" x2="15" y2="22" stroke="#34495E" stroke-width="2"/>
+      <!-- Motor connection points -->
+      <circle cx="10" cy="15" r="2" fill="#2980B9"/>
+      <circle cx="20" cy="15" r="2" fill="#2980B9"/>
+    </g>
+    <text x="80" y="65" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="12" font-weight="bold" fill="white">Controlador de Motor</text>
+    <text x="80" y="78" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="12" font-weight="bold" fill="white">(Puente H)</text>
+  </g>
+  
+  <!-- Power line from Motor Controller to DC Motor -->
+  <line x1="920" y1="290" x2="1000" y2="290" stroke="#E74C3C" stroke-width="6" marker-end="url(#arrowhead)"/>
+  <text x="940" y="280" font-family="Arial, sans-serif" font-size="10" fill="#E74C3C">Alimentación Motor</text>
+  
+  <!-- DC Motor -->
+  <g transform="translate(1000, 250)">
+    <rect width="120" height="80" rx="10" fill="url(#outputGradient)" stroke="#2C3E50" stroke-width="2"/>
+    <!-- DC Motor icon -->
+    <g transform="translate(50, 25)">
+      <circle cx="10" cy="15" r="12" fill="none" stroke="#34495E" stroke-width="3"/>
+      <circle cx="10" cy="15" r="8" fill="#95A5A6"/>
+      <circle cx="10" cy="15" r="3" fill="#34495E"/>
+      <!-- Motor terminals -->
+      <rect x="2" y="12" width="4" height="6" fill="#E74C3C"/>
+      <rect x="14" y="12" width="4" height="6" fill="#2980B9"/>
+      <!-- Rotation indicator -->
+      <path d="M10 7 Q16 15 10 23" fill="none" stroke="#27AE60" stroke-width="2" marker-end="url(#arrowhead)"/>
+    </g>
+    <text x="60" y="68" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="12" font-weight="bold" fill="white">Motor DC</text>
+  </g>
+  
+  <!-- Action arrow to exercise bike -->
+  <line x1="1120" y1="290" x2="1150" y2="350" stroke="#27AE60" stroke-width="4" marker-end="url(#arrowhead)"/>
+  <text x="1130" y="315" font-family="Arial, sans-serif" font-size="10" fill="#27AE60" transform="rotate(30 1130 315)">Acción</text>
+  
+  <!-- Exercise Bike (Cicloergómetro) -->
+  <g transform="translate(1050, 350)">
+    <!-- Person on bike (stylized) -->
+    <g transform="translate(30, 20)">
+      <!-- Bike frame -->
+      <path d="M0 40 L30 40 L35 25 L45 25 L50 40" fill="none" stroke="#34495E" stroke-width="3"/>
+      <path d="M15 40 L25 15" fill="none" stroke="#34495E" stroke-width="2"/>
+      <!-- Wheels -->
+      <circle cx="10" cy="50" r="8" fill="none" stroke="#2C3E50" stroke-width="3"/>
+      <circle cx="40" cy="50" r="8" fill="none" stroke="#2C3E50" stroke-width="3"/>
+      <!-- Person (stick figure) -->
+      <circle cx="25" cy="8" r="4" fill="#E67E22"/>
+      <line x1="25" y1="12" x2="25" y2="25" stroke="#E67E22" stroke-width="3"/>
+      <line x1="25" y1="18" x2="20" y2="22" stroke="#E67E22" stroke-width="2"/>
+      <line x1="25" y1="18" x2="30" y2="15" stroke="#E67E22" stroke-width="2"/>
+      <line x1="25" y1="25" x2="20" y2="35" stroke="#E67E22" stroke-width="2"/>
+      <line x1="25" y1="25" x2="30" y2="35" stroke="#E67E22" stroke-width="2"/>
+      <!-- Pedals -->
+      <circle cx="25" cy="35" r="2" fill="#95A5A6"/>
+    </g>
+    <text x="50" y="90" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="11" font-weight="bold" fill="#2C3E50">Cicloergómetro</text>
+    <text x="50" y="103" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="11" font-weight="bold" fill="#2C3E50">Estacionario</text>
+  </g>
+  
+  <!-- Section Labels -->
+  <text x="140" y="110" text-anchor="middle" font-family="Arial, sans-serif" 
+        font-size="16" font-weight="bold" fill="#34495E">ENTRADAS</text>
+  <text x="530" y="220" text-anchor="middle" font-family="Arial, sans-serif" 
+        font-size="16" font-weight="bold" fill="#34495E">PROCESAMIENTO</text>
+  <text x="1060" y="240" text-anchor="middle" font-family="Arial, sans-serif" 
+        font-size="16" font-weight="bold" fill="#34495E">SALIDA</text>
+  
+  <!-- Data flow legend -->
+  <g transform="translate(50, 520)">
+    <rect x="0" y="0" width="300" height="60" fill="#ECF0F1" stroke="#BDC3C7" stroke-width="1" rx="5"/>
+    <text x="10" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2C3E50">Leyenda:</text>
+    <line x1="10" y1="30" x2="40" y2="30" stroke="#2980B9" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="45" y="35" font-family="Arial, sans-serif" font-size="10" fill="#2C3E50">Bus de Datos Digitales</text>
+    <line x1="10" y1="45" x2="40" y2="45" stroke="#E74C3C" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <text x="45" y="50" font-family="Arial, sans-serif" font-size="10" fill="#2C3E50">Señales de Potencia</text>
+    <line x1="150" y1="30" x2="180" y2="30" stroke="#27AE60" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="185" y="35" font-family="Arial, sans-serif" font-size="10" fill="#2C3E50">Acción Mecánica</text>
+  </g>
+</svg>
