@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="450" viewBox="0 0 1400 450" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <!-- Arrowhead definition -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="450" fill="#fafafa" />
+
+  <!-- SENSOR BLOCKS -->
+  <!-- Sensor 1: Heart Rate -->
+  <g id="sensor-heart">
+    <rect x="60" y="40" width="220" height="80" rx="10" ry="10" fill="#7FC8F8" stroke="#4A90E2" stroke-width="2" />
+    <!-- Heart icon -->
+    <path d="M110 70 C110 55, 130 55, 130 70 C130 85, 110 95, 110 95 C110 95, 90 85, 90 70 C90 55, 110 55, 110 70 Z" fill="#e74c3c" />
+    <text x="155" y="90" font-size="16" fill="#003B6F" font-weight="bold">Sensor de Pulso Cardíaco</text>
+  </g>
+
+  <!-- Sensor 2: Temperature -->
+  <g id="sensor-temp">
+    <rect x="60" y="160" width="220" height="80" rx="10" ry="10" fill="#7FC8F8" stroke="#4A90E2" stroke-width="2" />
+    <!-- Thermometer icon -->
+    <rect x="90" y="185" width="20" height="35" rx="10" ry="10" fill="#f44336" />
+    <rect x="97" y="150" width="6" height="35" fill="#f44336" />
+    <circle cx="100" cy="220" r="12" fill="#f44336" />
+    <text x="155" y="210" font-size="16" fill="#003B6F" font-weight="bold">Sensor de Temperatura</text>
+  </g>
+
+  <!-- Sensor 3: IMU -->
+  <g id="sensor-imu">
+    <rect x="60" y="280" width="220" height="80" rx="10" ry="10" fill="#7FC8F8" stroke="#4A90E2" stroke-width="2" />
+    <!-- Curved arrow icon for motion -->
+    <path d="M100 335 A30 30 0 0 1 130 305 L120 315 M130 305 L120 295" stroke="#27ae60" stroke-width="4" fill="none" stroke-linecap="round" />
+    <text x="155" y="350" font-size="16" fill="#003B6F" font-weight="bold">Sensor de Movimiento (IMU)</text>
+  </g>
+
+  <!-- UNIT CENTRAL DE PROCESAMIENTO -->
+  <g id="ucp">
+    <rect x="430" y="110" width="300" height="200" rx="15" ry="15" fill="#F9A03F" stroke="#D97B0E" stroke-width="2" />
+    <!-- Microcontroller icon as rectangle with pins -->
+    <rect x="490" y="160" width="180" height="100" rx="5" ry="5" fill="#ffffff" stroke="#666" stroke-width="1.5" />
+    <!-- Pins -->
+    <g stroke="#666" stroke-width="1">
+      <line x1="485" y1="170" x2="490" y2="170" />
+      <line x1="485" y1="190" x2="490" y2="190" />
+      <line x1="485" y1="210" x2="490" y2="210" />
+      <line x1="485" y1="230" x2="490" y2="230" />
+      <line x1="485" y1="250" x2="490" y2="250" />
+      <line x1="670" y1="170" x2="675" y2="170" />
+      <line x1="670" y1="190" x2="675" y2="190" />
+      <line x1="670" y1="210" x2="675" y2="210" />
+      <line x1="670" y1="230" x2="675" y2="230" />
+      <line x1="670" y1="250" x2="675" y2="250" />
+    </g>
+    <text x="580" y="145" font-size="18" fill="#003B6F" font-weight="bold" text-anchor="middle">Unidad Central de Procesamiento</text>
+    <text x="580" y="285" font-size="16" fill="#003B6F" text-anchor="middle">Microcontrolador ATmega328P (Arduino)</text>
+  </g>
+
+  <!-- CONTROLADOR DE MOTOR (PUENTE H) -->
+  <g id="motor-driver">
+    <rect x="780" y="150" width="200" height="100" rx="10" ry="10" fill="#A4E786" stroke="#6BB34E" stroke-width="2" />
+    <!-- H-Bridge icon simple representation -->
+    <path d="M820 180 L860 180 L860 210 L820 210 Z M900 180 L940 180 L940 210 L900 210 Z" fill="#ffffff" stroke="#444" stroke-width="2" />
+    <text x="880" y="205" font-size="16" fill="#245A24" font-weight="bold" text-anchor="middle">Controlador de Motor (Puente H)</text>
+  </g>
+
+  <!-- MOTOR DC BLOCK -->
+  <g id="motor-dc">
+    <rect x="1030" y="150" width="140" height="100" rx="10" ry="10" fill="#5DBF4B" stroke="#3A8E31" stroke-width="2" />
+    <!-- Simple motor icon -->
+    <circle cx="1065" cy="200" r="18" fill="#ffffff" stroke="#3A8E31" stroke-width="2" />
+    <line x1="1047" y1="200" x2="1083" y2="200" stroke="#3A8E31" stroke-width="2" />
+    <line x1="1065" y1="182" x2="1065" y2="218" stroke="#3A8E31" stroke-width="2" />
+    <text x="1100" y="205" font-size="16" fill="#ffffff" font-weight="bold">Motor DC</text>
+  </g>
+
+  <!-- PERSON ON CYCLE ERGOMETER -->
+  <g id="ergometer" stroke="#555" stroke-width="2" fill="none">
+    <!-- Bike frame -->
+    <line x1="1200" y1="230" x2="1250" y2="230" />
+    <line x1="1225" y1="230" x2="1225" y2="190" />
+    <circle cx="1200" cy="230" r="20" />
+    <circle cx="1250" cy="230" r="20" />
+    <!-- Person -->
+    <circle cx="1225" cy="160" r="15" fill="#666" />
+    <line x1="1225" y1="175" x2="1225" y2="200" />
+    <line x1="1225" y1="190" x2="1210" y2="215" />
+    <line x1="1225" y1="190" x2="1240" y2="215" />
+  </g>
+
+  <!-- DATA BUSES / ARROWS -->
+  <!-- From Heart Sensor -->
+  <line x1="280" y1="80" x2="430" y2="150" stroke="#444" stroke-width="3" marker-end="url(#arrow)" />
+  <!-- From Temperature Sensor -->
+  <line x1="280" y1="200" x2="430" y2="200" stroke="#444" stroke-width="3" marker-end="url(#arrow)" />
+  <!-- From IMU Sensor -->
+  <line x1="280" y1="320" x2="430" y2="250" stroke="#444" stroke-width="3" marker-end="url(#arrow)" />
+
+  <!-- From CPU to Motor Driver -->
+  <line x1="730" y1="200" x2="780" y2="200" stroke="#444" stroke-width="3" marker-end="url(#arrow)" />
+  <!-- From Motor Driver to Motor DC -->
+  <line x1="980" y1="200" x2="1030" y2="200" stroke="#444" stroke-width="3" marker-end="url(#arrow)" />
+  <!-- From Motor DC to Ergometer -->
+  <line x1="1170" y1="200" x2="1200" y2="200" stroke="#444" stroke-width="3" marker-end="url(#arrow)" />
+
+</svg>
