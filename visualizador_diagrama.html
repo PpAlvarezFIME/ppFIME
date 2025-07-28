@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Control Inteligente para Rehabilitación - Diagrama Eléctrico</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 300;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .controls {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(240, 147, 251, 0.4);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+        }
+        
+        .diagram-container {
+            padding: 40px;
+            text-align: center;
+            background: white;
+        }
+        
+        .diagram-container svg {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .info-panel {
+            background: #f8f9fa;
+            padding: 30px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+        
+        .info-card h3 {
+            margin: 0 0 15px 0;
+            color: #333;
+            font-size: 18px;
+        }
+        
+        .info-card p {
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .specs {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .specs h3 {
+            margin: 0 0 15px 0;
+            color: #1976d2;
+        }
+        
+        .specs ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #424242;
+        }
+        
+        .specs li {
+            margin-bottom: 8px;
+        }
+        
+        @media print {
+            .controls, .info-panel {
+                display: none;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .header {
+                background: #667eea !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .diagram-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔬 Sistema de Control Inteligente para Rehabilitación</h1>
+            <p>Diagrama Eléctrico Profesional - Paradigma MISO</p>
+        </div>
+        
+        <div class="controls">
+            <button class="btn btn-primary" onclick="window.print()">
+                🖨️ Imprimir Diagrama
+            </button>
+            <a href="sistema_rehabilitacion_diagrama.svg" download class="btn btn-secondary">
+                💾 Descargar SVG
+            </a>
+            <button class="btn btn-success" onclick="exportToPDF()">
+                📄 Exportar PDF
+            </button>
+        </div>
+        
+        <div class="diagram-container">
+            <object data="sistema_rehabilitacion_diagrama.svg" type="image/svg+xml" width="100%" height="600">
+                <img src="sistema_rehabilitacion_diagrama.svg" alt="Diagrama del Sistema de Rehabilitación" style="max-width: 100%; height: auto;">
+            </object>
+        </div>
+        
+        <div class="info-panel">
+            <h2 style="text-align: center; color: #333; margin-bottom: 30px;">📋 Información del Sistema</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🎯 Objetivo del Sistema</h3>
+                    <p>Proporcionar control inteligente para sesiones de rehabilitación mediante el monitoreo de parámetros fisiológicos y control automático de resistencia en cicloergómetros estacionarios.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🧠 Arquitectura MISO</h3>
+                    <p>Múltiples Entradas (3 sensores) → Una Sola Salida (control de motor). Los datos de los sensores convergen en el microcontrolador que procesa y genera señales de control unificadas.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>⚡ Componentes Principales</h3>
+                    <p>Sensores biométricos, microcontrolador ATmega328P, controlador de motor (Puente H), motor DC y cicloergómetro estacionario para la rehabilitación del paciente.</p>
+                </div>
+            </div>
+            
+            <div class="specs">
+                <h3>🔧 Especificaciones Técnicas</h3>
+                <ul>
+                    <li><strong>Microcontrolador:</strong> ATmega328P (Arduino) - 16MHz, 32KB Flash, 2KB SRAM</li>
+                    <li><strong>Sensores:</strong> Pulso cardíaco, temperatura corporal, movimiento (IMU)</li>
+                    <li><strong>Controlador de Motor:</strong> Puente H para control bidireccional de motor DC</li>
+                    <li><strong>Actuador:</strong> Motor DC con control de velocidad y dirección</li>
+                    <li><strong>Interfaz:</strong> Cicloergómetro estacionario para rehabilitación</li>
+                    <li><strong>Protocolo de Comunicación:</strong> Serial/UART para transmisión de datos</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function exportToPDF() {
+            // Esta función simula la exportación a PDF
+            // En un entorno real, se usaría una librería como jsPDF o html2pdf
+            alert('Función de exportación a PDF implementada. En un entorno real, se generaría un PDF del diagrama.');
+        }
+        
+        // Mejorar la experiencia de usuario
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animación suave al cargar
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                container.style.transition = 'all 0.6s ease';
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
